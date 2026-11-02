@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+{% block title %} Achievements | Aadi {% endblock %}
+{% block content %}
+<main class="achievements-page">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="achievement-hero">
+
+        <div class="achievement-hero-glow"></div>
+        <div class="achievement-hero-grid"></div>
+
+        <div class="achievement-hero-inner">
+
+            <div class="achievement-hero-content">
+
+                <span class="achievement-eyebrow">
+                    <i class="fa-solid fa-trophy"></i>
+                    MILESTONES & HONORS
+                </span>
+
+                <h1>
+                    Achievements<span>.</span>
+                </h1>
+
+                <p>
+                    Some recognitions and experiences from technical events,
+                    innovation activities, and community participation.
+                </p>
+
+                <div class="achievement-meta">
+                    <span><i class="fa-solid fa-circle"></i> RECORD TYPE: CURATED AWARDS</span>
+                    <span><i class="fa-solid fa-circle"></i> VERIFIED CREDENTIALS</span>
+                    <span><i class="fa-solid fa-circle"></i> STATUS: ONGOING JOURNEY</span>
+                </div>
+
+            </div>
+
+
+            <!-- Animated trophy illustration -->
+
+            <div class="achievement-hero-decoration">
+
+                <div class="achievement-orbit orbit-one"></div>
+                <div class="achievement-orbit orbit-two"></div>
+                <div class="achievement-orbit orbit-three"></div>
+
+                <div class="hero-trophy">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+
+                <i class="fa-solid fa-star hero-spark spark-one"></i>
+                <i class="fa-solid fa-sparkles hero-spark spark-two"></i>
+                <i class="fa-solid fa-plus hero-spark spark-three"></i>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="achievement-stats-section">
+
+        <div class="achievement-stats">
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+
+                <div>
+                    <h3>2 First</h3>
+                    <p>Positions Secured</p>
+                </div>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+
+                <div>
+                    <h3>1 Regional</h3>
+                    <p>Podium Finish</p>
+                </div>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <div>
+                    <h3>NSS Active</h3>
+                    <p>Community Service</p>
+                </div>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div>
+                    <h3>IIT Roorkee</h3>
+                    <p>Workshop Scholar</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACHIEVEMENT REGISTRY ================= -->
+
+    <section class="achievement-registry">
+
+        <div class="container">
+
+            <div class="registry-heading">
+
+                <div>
+                    <span class="section-eyebrow">HONORS REGISTRY</span>
+                    <h2>Recognized Contributions & Wins</h2>
+                </div>
+
+                <span class="verified-label">
+                    <i class="fa-solid fa-certificate"></i>
+                    Verified Event Outcomes
+                </span>
+
+            </div>
+
+
+            <div class="achievement-grid">
+
+
+                <!-- CARD 1 -->
+                {% for achievement in achievements %}
+                <article class="achievement-card">
+
+                    <div class="certificate-preview">
+                        <img src="{{achievement.image}}" alt="{{achievement.image_alt}}">
+
+                        <span class="certificate-overlay">
+                            <i class="fa-solid fa-image"></i>
+                            Certificate Preview
+                        </span>
+                    </div>
+
+                    <div class="achievement-card-content">
+
+                        <div class="achievement-card-top">
+                            <span class="achievement-date">{{achievement.date}} · {{achievement.category}}</span>
+
+                            <span class="position-badge first">{{achievement.position}}</span>
+
+                        </div>
+
+                        <h3>{{achievement.title}}</h3>
+
+                        <span class="achievement-category">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            {{achievement.project_tag}}
+                        </span>
+
+                        <p>
+                            {{achievement.description}}
+                        </p>
+
+                        <div class="achievement-tags">
+                            {% for highlight in achievement.highlights %}{% endfor %}
+                        </div>
+
+                        <a href="{{achievement.image}}" target="_blank" class="certificate-button">
+                            View Certificate
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHOWCASE ================= -->
+
+    <section class="achievement-showcase">
+
+        <div class="showcase-grid">
+
+            <div class="showcase-content">
+
+                <span class="showcase-eyebrow">
+                    <i class="fa-solid fa-circle"></i>
+                    ENGINEERING DISCIPLINE
+                </span>
+
+                <h2>
+                    Rigorous execution tested in competitive spaces.
+                </h2>
+
+                <p>
+                    Every entry represents hands-on technical validation —
+                    from structuring complex client-server applications
+                    to presenting ideas under competitive timeframes.
+                </p>
+
+                <div class="showcase-stats">
+
+                    <div>
+                        <h3>100%</h3>
+                        <p>Verified Submissions</p>
+                    </div>
+
+                    <div>
+                        <h3>Polytechnic</h3>
+                        <p>Representative Honor</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="showcase-gallery">
+
+                <figure class="showcase-image">
+                    <img src="images/achievements/project-showcase.jpg" alt="Project exhibition showcase">
+
+                    <figcaption>Project Exhibition Showcase</figcaption>
+                </figure>
+
+                <figure class="showcase-image">
+                    <img src="images/achievements/ideathon-showcase.jpg" alt="Ideathon competition">
+
+                    <figcaption>Ideathon Competition Arena</figcaption>
+                </figure>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="achievement-cta-section">
+
+        <div class="container">
+
+            <div class="achievement-cta">
+
+                <div class="achievement-cta-content">
+
+                    <span class="section-eyebrow">VALIDATE CREDENTIALS</span>
+
+                    <h2>Explore Official Certifications</h2>
+
+                    <p>
+                        Examine verified diplomas, competition credentials,
+                        workshop completions and verifiable credential IDs.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-cta-actions">
+
+                    <a href="{% url "certificates" %}" class="cta-primary">
+                        <i class="fa-solid fa-certificate"></i>
+                        View Certificates
+                    </a>
+
+                    <a href="{% url "contact" %}" class="cta-secondary">
+                        <i class="fa-regular fa-envelope"></i>
+                        Let's Connect
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

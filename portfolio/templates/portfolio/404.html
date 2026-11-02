@@ -1,0 +1,101 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Aadi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<main class="error-page">
+    <div class="error-container">
+
+        <a href="/" class="error-brand">
+            <span>AN</span>
+            <strong>Aadi Nagpal</strong>
+        </a>
+
+        <section class="error-content">
+
+            <!-- Illustration -->
+            <div class="error-visual">
+
+                <div class="error-orbit orbit-a"></div>
+                <div class="error-orbit orbit-b"></div>
+
+                <div class="error-number">404</div>
+
+                <div class="error-floating-icon error-icon-one">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="error-floating-icon error-icon-two">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="error-floating-icon error-icon-three">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+                <span class="error-star star-a">✦</span>
+                <span class="error-star star-b">✧</span>
+                <span class="error-star star-c">✦</span>
+
+            </div>
+
+            <!-- Message -->
+            <div class="error-message">
+
+                <span class="error-label">
+                    <span></span>
+                    ERROR 404 · PAGE NOT FOUND
+                </span>
+
+                <h1>Looks like you're<br><span>off the map.</span></h1>
+
+                <p>
+                    The page you're looking for might have been moved,
+                    removed, or perhaps never existed. Let's get you
+                    back on track.
+                </p>
+
+                <div class="error-actions">
+                    <a href="/" class="error-home-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                    <a href="/contact" class="error-contact-btn">
+                        Contact Me
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <span class="error-footer-note">
+                    <i class="fa-solid fa-terminal"></i>
+                    DON'T WORRY, EVEN GOOD DEVELOPERS GET LOST SOMETIMES.
+                </span>
+
+            </div>
+
+        </section>
+
+        <footer class="error-bottom">
+            <span>© 2026 Aadi Nagpal</span>
+            <span>BUILT WITH CURIOSITY & CODE <i class="fa-solid fa-heart"></i></span>
+        </footer>
+
+    </div>
+</main>
+
+</body>
+</html>

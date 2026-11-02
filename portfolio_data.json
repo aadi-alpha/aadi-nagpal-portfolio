@@ -1,0 +1,594 @@
+[
+{
+  "model": "portfolio.profile",
+  "pk": 1,
+  "fields": {
+    "name": "Aadi Nagpal",
+    "title": "Computer Engineering Student",
+    "profession": "web developer",
+    "college": "Seth Jai Parkash Polytechnic, Damla",
+    "branch": "Computer Engg.",
+    "email": "aadinagpal46@gmail.com",
+    "location": "Jagadhri, Yamunanagar, India",
+    "introduction": "I enjoy turning ideas into clean, useful, and thoughtfully designed web applications. I'm constantly learning, building, and refining with every single release.",
+    "availability": "online"
+  }
+},
+{
+  "model": "portfolio.sociallinks",
+  "pk": 1,
+  "fields": {
+    "profile": 1,
+    "name": "LinkedIn",
+    "icon": "fa-brands fa-linkedin-in",
+    "url": "https://www.linkedin.com/in/aadi-nagpal-7a635333a/"
+  }
+},
+{
+  "model": "portfolio.sociallinks",
+  "pk": 2,
+  "fields": {
+    "profile": 1,
+    "name": "Instagram",
+    "icon": "fa-brands fa-instagram",
+    "url": "https://www.instagram.com/_aadinagpal_"
+  }
+},
+{
+  "model": "portfolio.sociallinks",
+  "pk": 3,
+  "fields": {
+    "profile": 1,
+    "name": "Email",
+    "icon": "fa-solid fa-envelope",
+    "url": "mailto:aadinagpal46@gmail.com"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 1,
+  "fields": {
+    "category_name": "Frontend Development",
+    "description": "Building responsive and interactive user interfaces.",
+    "icon": "fa-solid fa-code",
+    "note": "Focus on component architecture, CSS Flexbox/Grid, semantic markup, responsive layouts, and clean DOM manipulation.",
+    "slug": "frontend-development"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 2,
+  "fields": {
+    "category_name": "Backend Development",
+    "description": "Developing APIs and server-side application logic.",
+    "icon": "fa-solid fa-server",
+    "note": "Focus on server-side logic, RESTful API development, request handling, authentication, and building scalable application structures.",
+    "slug": "backend-development"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 3,
+  "fields": {
+    "category_name": "Databases",
+    "description": "Working with structured and document-based data.",
+    "icon": "fa-solid fa-database",
+    "note": "Focus on database design, CRUD operations, data modeling, schema relationships, and efficient data storage and retrieval.",
+    "slug": "databases"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 4,
+  "fields": {
+    "category_name": "Tools & Workflow",
+    "description": "Developer tools and version control workflows.",
+    "icon": "fa-solid fa-screwdriver-wrench",
+    "note": "Focus on version control, collaborative development, API testing, debugging, and maintaining efficient development workflows.",
+    "slug": "tools-workflow"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 5,
+  "fields": {
+    "category_name": "Cloud & Backend Services",
+    "description": "Building applications with cloud-based backend services.",
+    "icon": "fa-solid fa-cloud",
+    "note": "Focus on cloud integration, Firebase Authentication, Firestore database operations, real-time data synchronization, and backend services.",
+    "slug": "cloud-backend-services"
+  }
+},
+{
+  "model": "portfolio.skillcategories",
+  "pk": 6,
+  "fields": {
+    "category_name": "App Development",
+    "description": "Building cross-platform mobile applications.",
+    "icon": "a-solid fa-mobile-screen-button",
+    "note": "Focus on cross-platform development, Flutter widgets, Dart fundamentals, responsive mobile layouts, and building interactive user interfaces.",
+    "slug": "app-development"
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "HTML5",
+    "level": "proficient",
+    "icon": "fa-brands fa-html5",
+    "color": "#E34F26",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "CSS3",
+    "level": "proficient",
+    "icon": "fa-brands fa-css3-alt",
+    "color": "#1572B6",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "JavaScript",
+    "level": "intermediate",
+    "icon": "fa-brands fa-js",
+    "color": "#F7DF1E",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "React",
+    "level": "learning",
+    "icon": "fa-brands fa-react",
+    "color": "#61DAFB",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "name": "Python",
+    "level": "intermediate",
+    "icon": "fa-brands fa-python",
+    "color": "#3776AB",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "Django",
+    "level": "learning",
+    "icon": "fa-solid fa-leaf",
+    "color": "#092E20",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "name": "Node.js",
+    "level": "intermediate",
+    "icon": "fa-brands fa-node-js",
+    "color": "#339933",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "name": "Express.js",
+    "level": "intermediate",
+    "icon": "fa-solid fa-route",
+    "color": "#8B8B8B",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "MongoDB",
+    "level": "intermediate",
+    "icon": "fa-solid fa-leaf",
+    "color": "#47A248",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "SQL",
+    "level": "intermediate",
+    "icon": "fa-solid fa-database",
+    "color": "#4169E1",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Git",
+    "level": "intermediate",
+    "icon": "fa-brands fa-git-alt",
+    "color": "#F05032",
+    "is_featured": false
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 12,
+  "fields": {
+    "category": 3,
+    "name": "GitHub",
+    "level": "intermediate",
+    "icon": "#181717",
+    "color": "#181717",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 13,
+  "fields": {
+    "category": 4,
+    "name": "VS Code",
+    "level": "proficient",
+    "icon": "fa-solid fa-code",
+    "color": "#007ACC",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 14,
+  "fields": {
+    "category": 4,
+    "name": "Postman",
+    "level": "intermediate",
+    "icon": "fa-solid fa-paper-plane",
+    "color": "#FF6C37",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 15,
+  "fields": {
+    "category": 5,
+    "name": "Firebase",
+    "level": "intermediate",
+    "icon": "fa-solid fa-fire",
+    "color": "#FFCA28",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.skills",
+  "pk": 16,
+  "fields": {
+    "category": 6,
+    "name": "Flutter",
+    "level": "learning",
+    "icon": "fa-brands fa-flutter",
+    "color": "#02569B",
+    "is_featured": true
+  }
+},
+{
+  "model": "portfolio.about",
+  "pk": 1,
+  "fields": {
+    "profile_image": "https://drive.google.com/uc?export=view&id=1biXXj6kdZftSv8FqMB0k_6DsWFuATQgt",
+    "profile_tag": "Computer Engineering Student",
+    "highlight": "I'm pursuing a Diploma in Computer Engineering (Aided) at Seth Jai Parkash Polytechnic, Damla. I'm passionate about web development and enjoy exploring how technology can be used to solve practical problems.",
+    "quote": "Real software mastery isn't about memorizing syntax; it's about breaking down messy problems into straightforward, reliable solutions.",
+    "quote_author": "AADI'S ENGINEERING MINDSET"
+  }
+},
+{
+  "model": "portfolio.aboutpoint",
+  "pk": 1,
+  "fields": {
+    "about": 1,
+    "title": "Full-Stack Web Development",
+    "icon": "fa-solid fa-battery-full",
+    "description": "I love bringing concepts to life across the entire stack. From building fluid, responsive interfaces that respect user attention to designing dependable server endpoints and database queries, my goal is always seamless coherence."
+  }
+},
+{
+  "model": "portfolio.aboutpoint",
+  "pk": 2,
+  "fields": {
+    "about": 1,
+    "title": "Deepening Backend Horizons with Python & Django",
+    "icon": "fa-regular fa-square",
+    "description": "Lately, I've been expanding serious focus into the Python ecosystem—specifically Django. I appreciate its structured architecture, solid ORM capabilities, and pragmatic design philosophy for architecting data-intensive web services."
+  }
+},
+{
+  "model": "portfolio.aboutpoint",
+  "pk": 3,
+  "fields": {
+    "about": 1,
+    "title": "Pragmatic, Useful Projects",
+    "icon": "fa-solid fa-crosshairs",
+    "description": "Theory solidifies only when tested in real situations. I prioritize building tools that solve actual community workflows—student management tools, college trackers, and workflow automation helpers that deliver tangible utility."
+  }
+},
+{
+  "model": "portfolio.aboutpoint",
+  "pk": 4,
+  "fields": {
+    "about": 1,
+    "title": "Lifelong Curiosity & Systematic Learning",
+    "icon": "fa-solid fa-tree",
+    "description": "Whether pouring over standard library documentation, dissecting open-source codebases, or understanding memory allocation and networking primitives, I treat software engineering as an evolving craft requiring continuous collaborative practice."
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 1,
+  "fields": {
+    "period": "Secondary School",
+    "status": "completed",
+    "is_completed": true,
+    "title": "Secondary School Certificate (10th Standard)",
+    "institution": "S.D. Public School, Jagadhri",
+    "institution_url": "https://www.sdpsjagadhri.com/",
+    "description": "Completed with strong academic foundations in Mathematics, Science, and logical reasoning, sparking an early interest in computing and structured problem-solving.",
+    "tags": [
+      "Mathematics",
+      "Science",
+      "English",
+      "Hindi"
+    ],
+    "timeline_position": "right",
+    "icon": "fa-solid fa-school"
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 2,
+  "fields": {
+    "period": "2023 – Present",
+    "status": "ongoing",
+    "is_completed": false,
+    "title": "Diploma in Computer Engineering",
+    "institution": "Seth Jai Parkash Polytechnic, Damla",
+    "institution_url": "https://www.sjpdamla.ac.in/",
+    "description": "Engaging in a systematic technical coursework covering algorithms, relational database administration, computer networks and full-stack software development. Active participation in departmental tech initiatives and peer development circles.",
+    "tags": [
+      "Data Structures",
+      "Web Technologies",
+      "DBMS"
+    ],
+    "timeline_position": "left",
+    "icon": "fa-solid fa-graduation-cap"
+  }
+},
+{
+  "model": "portfolio.principles",
+  "pk": 1,
+  "fields": {
+    "title": "Building Useful Things",
+    "icon": "fa-solid fa-hammer",
+    "description": "Passionate about software that genuinely helps organizations and people automate tasks and solve real-world daily friction. For me, utility is the highest mark of engineering success.",
+    "link_text": "Practical utility →"
+  }
+},
+{
+  "model": "portfolio.principles",
+  "pk": 2,
+  "fields": {
+    "title": "Learning Deeply",
+    "icon": "fa-solid fa-diamond",
+    "description": "Curiosity for understanding how frameworks, databases, and network protocols work beneath high-level abstractions. True confidence comes from knowing the mechanics underneath.",
+    "link_text": "First principles →"
+  }
+},
+{
+  "model": "portfolio.principles",
+  "pk": 3,
+  "fields": {
+    "title": "Teamwork & Collaboration",
+    "icon": "fa-solid fa-hand-holding-hand",
+    "description": "Enjoying hackathons, group ideation, peer code reviews, and shared technical activities. Software is fundamentally a collaborative craft elevated by collective intelligence.",
+    "link_text": "Community first →"
+  }
+},
+{
+  "model": "portfolio.achievement",
+  "pk": 1,
+  "fields": {
+    "position": 1,
+    "date": "1, May 2026",
+    "category": "Computer Engineering (Aided) Dept.",
+    "title": "Department Project Exhibition",
+    "badge": "First Position",
+    "project_tag": "Multi Branch IMS Project",
+    "description": "Awarded top honor for developing the Multi-Branch Institute Management System, recognized for architectural scalability and role-based access control.",
+    "highlights": [
+      "Architecture",
+      "RBAC",
+      "Full Stack"
+    ],
+    "image": "",
+    "image_alt": "Department Project Exhibition",
+    "certificate_url": "",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:33:01.451Z",
+    "updated_at": "2026-11-01T15:33:01.451Z"
+  }
+},
+{
+  "model": "portfolio.achievement",
+  "pk": 2,
+  "fields": {
+    "position": 1,
+    "date": "2026",
+    "category": "Entrepreneurship Development Cell",
+    "title": "ED Cell Ideathon",
+    "badge": "First Position",
+    "project_tag": "Team Innovation Project",
+    "description": "Clinched first place in the college-level ideathon by presenting an impactful tech solution addressing real-world challenges.",
+    "highlights": [
+      "Innovation",
+      "Product Strategy",
+      "Ideation"
+    ],
+    "image": "",
+    "image_alt": "Department Project Exhibition",
+    "certificate_url": "",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:34:18.651Z",
+    "updated_at": "2026-11-01T15:34:18.651Z"
+  }
+},
+{
+  "model": "portfolio.achievement",
+  "pk": 3,
+  "fields": {
+    "position": 2,
+    "date": "2026",
+    "category": "TIMT",
+    "title": "TIMT Web Craft",
+    "badge": "Second Position",
+    "project_tag": "Web Design & Development Competition",
+    "description": "Secured second position in a rapid front-end engineering challenge, evaluated on UI responsiveness, accessibility and clean code standards.",
+    "highlights": [
+      "UI/UX",
+      "Responsive Design",
+      "HTML & CSS"
+    ],
+    "image": "",
+    "image_alt": "Department Project Exhibition",
+    "certificate_url": "",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:35:44.307Z",
+    "updated_at": "2026-11-01T15:35:44.307Z"
+  }
+},
+{
+  "model": "portfolio.achievement",
+  "pk": 4,
+  "fields": {
+    "position": 1,
+    "date": "22-Nov-2024",
+    "category": "District Youth Festival",
+    "title": "Science Mela",
+    "badge": "First Position",
+    "project_tag": "Team Participation",
+    "description": "Secured first position in both team and solo categories at the District Youth Festival Science Mela.",
+    "highlights": [
+      "Science",
+      "Innovation",
+      "Presentation"
+    ],
+    "image": "",
+    "image_alt": "",
+    "certificate_url": "",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:37:13.922Z",
+    "updated_at": "2026-11-01T15:37:13.922Z"
+  }
+},
+{
+  "model": "portfolio.certificate",
+  "pk": 1,
+  "fields": {
+    "title": "Python Programming Certification",
+    "provider": "TuteDude Academy",
+    "year": 2026,
+    "type": "course",
+    "description": "Rigorous fundamentals program focusing on building robust backend systems, data pipelines, and object-oriented scripts.",
+    "topics": [
+      "Python Core",
+      "OOPs",
+      "Selenium",
+      "Django"
+    ],
+    "image": "",
+    "image_alt": "Python Programming Certificate",
+    "certificate_url": "",
+    "certificate_label": "View Certificate",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:39:48.099Z",
+    "updated_at": "2026-11-01T15:39:48.099Z"
+  }
+},
+{
+  "model": "portfolio.certificate",
+  "pk": 2,
+  "fields": {
+    "title": "AI & Machine Learning Workshop",
+    "provider": "Remarkskill & IIT Roorkee",
+    "year": 2025,
+    "type": "workshop",
+    "description": "Participated in a technical workshop focused on Artificial Intelligence and Machine Learning concepts, tools and practical applications.",
+    "topics": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Technical Workshop"
+    ],
+    "image": "",
+    "image_alt": "AI and Machine Learning Workshop Certificate",
+    "certificate_url": "",
+    "certificate_label": "View Certificate",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:40:47.785Z",
+    "updated_at": "2026-11-01T15:42:45.709Z"
+  }
+},
+{
+  "model": "portfolio.certificate",
+  "pk": 3,
+  "fields": {
+    "title": "Web Designing Training",
+    "provider": "Contriverz",
+    "year": 2025,
+    "type": "certificate",
+    "description": "Completed a 45-day web designing training program covering the fundamentals of frontend development and website creation.",
+    "topics": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Web Design"
+    ],
+    "image": "",
+    "image_alt": "Web Designing Training Certificate",
+    "certificate_url": "",
+    "certificate_label": "View Certificate",
+    "is_featured": true,
+    "created_at": "2026-11-01T15:42:33.147Z",
+    "updated_at": "2026-11-01T15:42:45.706Z"
+  }
+}
+]

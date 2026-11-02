@@ -1,0 +1,286 @@
+
+{% extends "base.html" %}
+{% block title %} Projects | Aadi {% endblock  %}
+{% block content %}
+    <main class="projects-page">
+
+    <!-- PROJECTS HERO -->
+    <section class="projects-hero">
+        <div class="projects-container">
+
+            <span class="project-eyebrow">
+                <i class="fa-solid fa-layer-group"></i>
+                PORTFOLIO & CASE STUDIES
+            </span>
+
+            <div class="projects-hero-content">
+                <div>
+                    <h1>Featured Projects<span>.</span></h1>
+
+                    <p>
+                        A curated collection of full-stack web applications,
+                        civic technology platforms, and management systems
+                        built with modern web architectures.
+                    </p>
+                </div>
+
+                <div class="hero-highlight">
+                    <span class="highlight-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <div>
+                        <strong>Building with purpose</strong>
+                        <small>Ideas transformed into practical solutions</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT HIGHLIGHTS -->
+            <div class="project-highlights">
+
+                <div class="highlight-item">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Production Builds</span>
+                </div>
+
+                <div class="highlight-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>MERN & Django Stacks</span>
+                </div>
+
+                <div class="highlight-item">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>REST APIs & RBAC</span>
+                </div>
+
+                <div class="highlight-item">
+                    <i class="fa-solid fa-window-maximize"></i>
+                    <span>Clean Architecture</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECT REPOSITORY -->
+    <section class="projects-repository">
+        <div class="projects-container">
+
+            <!-- FILTERS -->
+           
+
+
+            <!-- PROJECT  -->
+             {% for project in projects %}
+                 <article class="project-card">
+
+                <div class="project-content">
+
+                    <div class="project-top-tags">
+                        <span class="project-label">{{project.label}}</span>
+                        <span class="project-status">
+                            <span></span> {{project.status_type|upper}}
+                        </span>
+                    </div>
+
+                    <span class="project-number">{{project.number}} / {{project.title}}</span>
+
+                    <h2>
+                        {{project.title|title}}
+                    </h2>
+
+                    <p class="project-description">
+                        {{project.description}}
+                    </p>
+
+                    <div class="project-features">
+                        {% for feature in project.features %}
+                              <div class="feature-item">
+                            <span>{{feature.number}} / {{feature.title}}</span>
+                            <p>
+                                {{feature.description}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                      
+
+                       
+
+                    </div>
+
+                    <div class="tech-stack">
+                        {% for tech in project.technologies %}
+                            <span>{{tech|title}}</span>
+                        {% endfor %}
+                        
+                        
+                    </div>
+
+                    <div class="project-note">
+                        <i class="{{project.note_icon}}"></i>
+                        {{project.technical_note}}
+                    </div>
+
+                    <div class="project-actions">
+                    {% if project.live_url %}
+                        <a href="{{ project.live_url }}" class="project-btn primary-btn" target="_blank">
+                            Live Demo
+                        </a>
+                    {% endif %}
+                    {% if project.github_url %}
+                        <a href="project.github_url" class="project-btn secondary-btn" target="_blank">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                    {% endif %}
+                    </div>
+
+                 
+
+                </div>
+
+
+                <div class="project-image-wrapper">
+                    <div class="project-image">
+                        <img src="images/takshila-demo.jpg"
+                             alt="Takshila Institute Management System preview">
+
+                        <span class="image-caption">
+                            <i class="fa-regular fa-image"></i>
+                            Takshila IMS — Application Preview
+                        </span>
+                    </div>
+                </div>
+
+            </article>
+             {% endfor %}
+           
+
+
+          
+
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGY SECTION -->
+    <section class="methodology-section">
+
+        <div class="projects-container">
+
+            <div class="methodology-heading">
+                <span class="project-eyebrow">METHODOLOGY & STANDARDS</span>
+
+                <h2>How I Architect Web Solutions</h2>
+
+                <p>
+                    Writing maintainable software requires intentional
+                    design choices from the data layer up to user interfaces.
+                </p>
+            </div>
+
+
+            <div class="methodology-grid">
+
+                <article class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <span>01 / FOUNDATION</span>
+
+                    <h3>Database-First Modeling</h3>
+
+                    <p>
+                        Designing robust relational or document schemas
+                        with clear constraints, indexing, and normalization
+                        before writing controller logic.
+                    </p>
+                </article>
+
+
+                <article class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <span>02 / RELIABILITY</span>
+
+                    <h3>Secure & Maintainable APIs</h3>
+
+                    <p>
+                        Implementing robust JWT authentication,
+                        standardized HTTP status codes, structured
+                        middleware pipelines, and deterministic
+                        error handling.
+                    </p>
+                </article>
+
+
+                <article class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <span>03 / EXPERIENCE</span>
+
+                    <h3>Accessible Interfaces</h3>
+
+                    <p>
+                        Semantic HTML, component-driven layouts,
+                        sub-second interaction times, and responsive
+                        ergonomics crafted for real-world devices.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTTOM CTA -->
+    <section class="projects-cta-section">
+
+        <div class="projects-container">
+
+            <div class="projects-cta">
+
+                <div>
+                    <span class="project-eyebrow">LET'S COLLABORATE</span>
+
+                    <h2>
+                        Have a project or internship
+                        opportunity in mind?
+                    </h2>
+
+                    <p>
+                        Let's build something scalable, reliable,
+                        and impactful together.
+                    </p>
+                </div>
+
+                <div class="cta-buttons">
+
+                    <a href="mailto:aadinagpal46@gmail.com" class="project-btn primary-btn">
+                        Get in Touch
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="{% url "skills" %}" class="project-btn secondary-btn">
+                        Explore My Technical Skills
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+
+{% block title %}Skills | Aadi{% endblock  %}
+
+{% block content %}
+
+    <main class="skills-page">
+
+        <!-- HERO -->
+        <section class="skills-hero">
+            <div class="skills-container skills-hero-layout">
+
+                <div class="skills-hero-content">
+                    <div class="skills-eyebrow">
+                        <span>▣</span> TECHNICAL TOOLKIT
+                    </div>
+
+                    <h1>Skills &amp; Technologies</h1>
+
+                    <p class="skills-hero-description">
+                        Technologies I've explored through coursework, practice, and project
+                        development. Clean architecture, dependable execution, and modern workflows.
+                    </p>
+                </div>
+
+                <!-- Animated concentric rings -->
+                <div class="skills-hero-animation" aria-hidden="true">
+                    <div class="ring-glow"></div>
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                    <div class="ring ring-4"></div>
+                    <div class="ring ring-5"></div>
+                    <div class="ring ring-6"></div>
+                    <div class="ring ring-7"></div>
+                    <div class="ring-center"></div>
+                </div>
+
+                <div class="technology-layers">
+                    <div class="layer-item">
+                        <span>01 / LAYER</span>
+                        <strong>Frontend UI</strong>
+                    </div>
+                    <div class="layer-item">
+                        <span>02 / LAYER</span>
+                        <strong>Backend APIs</strong>
+                    </div>
+                    <div class="layer-item">
+                        <span>03 / LAYER</span>
+                        <strong>Data Stores</strong>
+                    </div>
+                    <div class="layer-item">
+                        <span>04 / LAYER</span>
+                        <strong>Dev Tooling</strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURED PHILOSOPHY -->
+        <section class="skills-featured-section">
+            <div class="skills-container">
+                <div class="skills-featured-card">
+                    <div class="featured-copy">
+                        <span class="skills-mini-label">◎ Pragmatic Implementation Philosophy</span>
+                        <h2>Modern Full-Stack Engineering with Rigorous Fundamentals</h2>
+                        <p>
+                            Every library and framework is an intentional choice for
+                            reliability, maintainability, and clean user feedback loops.
+                        </p>
+                    </div>
+
+                    <div class="featured-visual">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85"
+                            alt="Developer workstation with computer and coding setup">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE SKILLS -->
+        <section class="skills-core-section">
+            <div class="skills-container">
+
+                <div class="skills-section-heading">
+                    <div>
+                        <span class="skills-section-label">CORE COMPETENCIES</span>
+                        <h2>Categorized Stack</h2>
+                    </div>
+                    <p>
+                        Structured evaluation of frameworks, runtimes, and engineering
+                        environments used across active builds.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+
+                    {% for skill_grp in skills %}
+                        <article class="skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon">&lt;/&gt;</div>
+                                <span class="skill-number">{{skill_grp.number}} / {{skill_grp.category_name}}</span>
+                            </div>
+
+                            <h3>{{skill_grp.category_name|title}}</h3>
+                            <p class="skill-description">
+                                {{skill_grp.description}}
+                            </p>
+
+                            <div class="skill-tags">
+                                {% for skill in skill_grp.skills_set.all %}
+                                <span>{{skill.name}}</span>
+                              
+                                {% endfor %}
+                            </div>
+
+                            <div class="skill-note">
+                                <span><i class="fa-solid fa-circle-info"></i></span>
+                                <p>
+                                    {{skill_grp.note}}
+                                </p>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    <!-- FRONTEND -->
+                   
+
+                 
+
+                </div>
+            </div>
+        </section>
+
+        <!-- METHODOLOGY -->
+        <section class="skills-method-section">
+            <div class="skills-container">
+                <div class="skills-method-heading">
+                    <span class="skills-section-label">METHODOLOGY</span>
+                    <h2>My Approach</h2>
+                    <p>How I turn complex technical challenges into dependable software.</p>
+                </div>
+
+                <div class="method-grid">
+
+                    <article class="method-card">
+                        <div class="method-top">
+                            <span class="method-number">01</span>
+                            <span class="method-symbol">◎</span>
+                        </div>
+                        <h3>Understand</h3>
+                        <p>
+                            Analyze the requirements thoroughly, understand the user
+                            problem, and map data flows before writing code.
+                        </p>
+                        <div class="method-footer">↗ Scope &amp; Data Model First</div>
+                    </article>
+
+                    <article class="method-card">
+                        <div class="method-top">
+                            <span class="method-number">02</span>
+                            <span class="method-symbol">&lt;/&gt;</span>
+                        </div>
+                        <h3>Build</h3>
+                        <p>
+                            Implement modular, readable, and testable code adhering to
+                            best practices, clean directory structures, and established conventions.
+                        </p>
+                        <div class="method-footer">↗ Semantic &amp; Modular Logic</div>
+                    </article>
+
+                    <article class="method-card">
+                        <div class="method-top">
+                            <span class="method-number">03</span>
+                            <span class="method-symbol">✣</span>
+                        </div>
+                        <h3>Improve</h3>
+                        <p>
+                            Refactor, benchmark responsiveness, optimize database queries,
+                            gather feedback, and continuously polish user experience.
+                        </p>
+                        <div class="method-footer">↗ Iterative Optimization</div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CODEBASE HEALTH -->
+        <section class="skills-growth-section">
+            <div class="skills-container">
+                <div class="growth-card">
+                    <div class="growth-copy">
+                        <span class="growth-status"><i></i> SYSTEM EXECUTION LOG</span>
+                        <h2>Codebase Health &amp; Continuous Growth</h2>
+                        <p>
+                            Consistently experimenting with real projects, testing edge cases,
+                            and reading documentation to produce maintainable architectures.
+                        </p>
+                    </div>
+
+                    <div class="terminal-window-growth">
+                        <div class="terminal-top">
+                            <span></span><span></span><span></span>
+                            <small>workflow.sh</small>
+                        </div>
+                        <div class="terminal-content">
+                            <p>$ aadi --status</p>
+                            <p class="terminal-green"><i class="fa-regular fa-circle-check"></i> Ready for collaboration &amp; internships</p>
+                            <p class="terminal-green"><i class="fa-regular fa-circle-check"></i> Next.js exploration: in progress</p>
+                            <p class="terminal-purple"><i class="fa-solid fa-arrow-right"></i> test: modularize React UI &amp; REST endpoints</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="skills-cta-section">
+            <div class="skills-container">
+                <div class="skills-cta-card">
+                    <div>
+                        <span class="skills-section-label">SEE THEM IN ACTION</span>
+                        <h2>Explore My Work &amp; Case Studies</h2>
+                        <p>
+                            Discover how these tools come together to create functional,
+                            responsive web applications and clean APIs.
+                        </p>
+                    </div>
+
+                    <div class="skills-cta-actions">
+                        <a href="{% url 'projects' %}" class="skills-primary-btn">
+                            View Featured Projects <span>→</span>
+                        </a>
+                        <a href="{% url 'contact' %}" class="skills-secondary-btn">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% endblock  %}

@@ -1,0 +1,56 @@
+ {% load static %}
+ <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-about">
+
+                    <a class="footer-brand" href="#home">
+                        <img src="{% static "images/brand_mark.png" %}" alt="Brand Mark" class="brand-mark">
+                        <strong>{{profile.name}}</strong>
+                    </a>
+
+                    <p>
+                        Computer Engineering Student & Full-Stack Web Developer.
+                        Turning ideas into clean, useful digital experiences.
+                    </p>
+
+                    <span class="availability">
+                        <i></i> Open to collaborations & internships
+                    </span>
+
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <a  href="{% url 'home' %}">Home</a>
+                    <a  href="{% url 'about' %}">About</a>
+                    <a  href="{% url 'skills' %}">Skills</a>
+                    <a  href="{% url 'projects' %}">Projects</a>
+                    <a  href="{% url 'achievements' %}">Achievements</a>
+                    <a  href="{% url 'certificates' %}">Certificates</a>
+                    <a  href="{% url 'contact' %}">Contact</a>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                   
+                    
+                     {% for link in  social_links %}
+                        <a href="{{link.url}}"  {% if link.name != "Email" %} target="_blank" rel="noopener noreferrer"{% endif %}><i class="{{link.icon}}"></i> {{link.name}}</a>
+                    {% endfor %} 
+                    <p class="footer-note">
+                        Based in India · Available worldwide for remote work
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; <span id="year"></span> Aadi Nagpal. All rights reserved.</span>
+                <span>Designed for modern web standards.</span>
+            </div>
+
+        </div>
+    </footer>

@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} About | Aadi {% endblock %}
+{% block content %}
+<main>
+    <!-- ABOUT PAGE INTRO -->
+
+    <section class="about-hero">
+        <div class="about-hero-container">
+
+            <!-- Left Content -->
+            <div class="about-hero-content">
+
+                <span class="about-hero-tag">
+                    <span></span>
+                    GET TO KNOW ME
+                </span>
+
+                <h1>About Me</h1>
+
+                <p>
+                    A little introduction to who I am, what I'm learning
+                    and the journey that brought me here.
+                </p>
+
+            </div>
+
+            <!-- Right Animation -->
+            <div class="about-hero-visual">
+
+                <div class="about-visual-circle"></div>
+                <div class="about-visual-circle circle-two"></div>
+
+                <div class="about-visual-center">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <!-- Floating Tech Icons -->
+                <div class="about-floating-icon icon-python">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+
+                <div class="about-floating-icon icon-react">
+                    <i class="fa-brands fa-react"></i>
+                </div>
+
+                <div class="about-floating-icon icon-code">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="about-floating-icon icon-database">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="about-floating-icon icon-server">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <!-- Decorative Dots -->
+                <span class="about-dot dot-one"></span>
+                <span class="about-dot dot-two"></span>
+                <span class="about-dot dot-three"></span>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="about-introduction">
+        <div class="about-container intro-grid">
+
+            <!-- LEFT PROFILE COLUMN -->
+            <div class="profile-column">
+
+                <div class="profile-image-wrapper">
+                    <img src="{% static 'images/aadi_nagpal.jpg'%}" alt="Aadi Nagpal working at his desk"
+                        class="about-profile-image">
+
+                    <span class="profile-tag">
+                        ✦ {{about.profile_tag}}
+                    </span>
+                </div>
+
+                <div class="snapshot-card">
+                    <span class="small-heading">SNAPSHOT</span>
+
+                    <div class="snapshot-item">
+                        <span class="snapshot-icon"><i class="fa-solid fa-location-crosshairs"></i></span>
+                        <div>
+                            <small>Location</small>
+                            <p>Damla, Yamunanagar, Haryana</p>
+                        </div>
+                    </div>
+
+                    <div class="snapshot-item">
+                        <span class="snapshot-icon"><i class="fa-solid fa-code"></i></span>
+                        <div>
+                            <small>Primary Focus</small>
+                            <p>Full-Stack Web Development</p>
+                        </div>
+                    </div>
+
+                    <div class="snapshot-item">
+                        <span class="snapshot-icon"><i class="fa-solid fa-up-right-from-square"></i></span>
+                        <div>
+                            <small>Current Availability</small>
+                            <p>Actively Building Projects</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT INTRODUCTION COLUMN -->
+            <div class="intro-content">
+
+                <span class="eyebrow">// WELCOME</span>
+                <h2>I'm {{profile.name}}</h2>
+
+                <div class="intro-highlight">
+                    {{about.highlight}}
+                </div>
+
+                {% for point in aboutPoint %}
+                <div class="intro-point">
+                    <div class="point-icon"><i class="{{point.icon}}"></i></div>
+                    <div>
+                        <h3>{{point.title}}</h3>
+                        <p>
+                            {{point.description}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                <blockquote class="about-quote">
+                    <span>❝</span>
+                    <p>
+                        {{about.quote}}
+                    </p>
+                    <small>— {{about.quote_author}}</small>
+                </blockquote>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EDUCATION JOURNEY -->
+    <section class="education-section">
+        <div class="about-container">
+
+            <div class="center-heading">
+                <span class="section-label">✧ ACADEMIC RECORD</span>
+                <h2>My Educational Journey</h2>
+                <p>Foundations of computer engineering and systematic learning.</p>
+            </div>
+
+
+            <div class="education-timeline">
+                {% for edu in education %}
+                <div class="timeline-item timeline-{{edu.timeline_position}}">
+                    <div class="education-card">
+                        <div class="education-meta">
+                            <span>{{edu.period}}</span>
+                            <span class="education-status">● {{edu.status}}</span>
+                        </div>
+
+                        <h3>{{edu.title}}</h3>
+                        <a href="{{edu.institution_url}}" class="institution-link">
+                            {{edu.institution}}
+                        </a>
+
+                        <p>
+                            {{edu.description}}
+                        </p>
+
+                        <div class="education-tags">
+                            {% for tag in edu.tags %}
+                            <span>{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <span class="timeline-dot"><i class="{{edu.icon}}"></i></span>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRINCIPLES -->
+    <section class="principles-section">
+        <div class="about-container">
+
+            <div class="principles-heading">
+                <span class="section-label">✧ PRINCIPLES</span>
+                <h2>What Drives Me</h2>
+                <p>
+                    Three guiding mindsets that dictate how I approach
+                    code, engineering challenges, and team collaboration.
+                </p>
+            </div>
+
+
+            <div class="principles-grid">
+                {% for principle in principles %}
+                <article class="principle-card">
+                    <div class="principle-icon"><i class="{{principle.icon}}"></i></div>
+                    <h3>{{principle.title}}</h3>
+                    <p>
+                        {{principle.description}}
+                    </p>
+
+                </article>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BOTTOM CTA -->
+    <section class="about-cta-section">
+        <div class="about-container">
+            <div class="about-cta">
+
+                <div class="cta-content">
+                    <span class="cta-label">✧ EXPLORE WHAT'S NEXT</span>
+                    <h2>
+                        Curious about my skillset and the software I build?
+                    </h2>
+                    <p>
+                        Discover the full breadth of my technical competencies,
+                        tooling workflows, and deployed applications.
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a href="{% url "skills" %}" class="cta-primary">
+                        View Technical Skills <i class="fa-solid fa-up-right-from-square"></i></span>
+                    </a>
+
+                    <a href="{% url "achievements" %}" class="cta-secondary">
+                        View Achievements <span><i class="fa-solid fa-diamond"></i></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

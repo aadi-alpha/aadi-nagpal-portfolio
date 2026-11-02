@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+{% block title %} Certificates | Aadi {% endblock %}
+{% block content %}
+<main class="certificates-page">
+
+    <!-- HERO SECTION -->
+    <section class="cert-hero">
+
+        <div class="cert-hero-grid"></div>
+        <div class="cert-hero-glow"></div>
+
+        <div class="cert-hero-inner">
+
+            <div class="cert-hero-content">
+
+                <span class="cert-eyebrow">
+                    <i class="fa-solid fa-certificate"></i>
+                    CREDENTIALS & WORKSHOPS
+                </span>
+
+                <h1>
+                    My <span>Certificates.</span>
+                </h1>
+
+                <p>
+                    A curated collection of certified technical courses,
+                    industry workshops, and hands-on learning milestones
+                    validating core engineering disciplines.
+                </p>
+
+                <div class="cert-hero-pills">
+
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        3 Professional Credentials
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        IIT Roorkee Associated
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Directly Verifiable
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CREDENTIAL ORBIT ANIMATION -->
+            <div class="cert-hero-visual">
+
+                <div class="cert-orbit cert-orbit-one">
+                    <span class="cert-orbit-dot"></span>
+                </div>
+
+                <div class="cert-orbit cert-orbit-two">
+                    <span class="cert-orbit-dot"></span>
+                </div>
+
+                <div class="cert-orbit cert-orbit-three">
+                    <span class="cert-orbit-dot"></span>
+                </div>
+
+                <div class="floating-cert floating-cert-back">
+                    <i class="fa-solid fa-award"></i>
+                    <span>ACHIEVEMENT</span>
+                </div>
+
+                <div class="floating-cert floating-cert-front">
+
+                    <div class="floating-cert-top">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>VERIFIED CREDENTIAL</span>
+                    </div>
+
+                    <div class="floating-cert-seal">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+
+                    <h3>Certificate of Excellence</h3>
+
+                    <p>Learning. Building. Growing.</p>
+
+                    <div class="floating-cert-lines">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="floating-cert-footer">
+                        <span>AUTHORIZED</span>
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+
+                </div>
+
+                <div class="cert-float-tag cert-tag-one">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Verified
+                </div>
+
+                <div class="cert-float-tag cert-tag-two">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Learning Milestone
+                </div>
+
+                <span class="cert-spark cert-spark-one">✦</span>
+                <span class="cert-spark cert-spark-two">✧</span>
+                <span class="cert-spark cert-spark-three">✦</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATE REPOSITORY -->
+    <section class="cert-repository">
+
+        <div class="cert-container">
+
+            <div class="cert-section-heading">
+                <span>[01 // REPOSITORY]</span>
+                <div class="heading-line"></div>
+                <small>Click preview card to enlarge</small>
+            </div>
+
+
+            <div class="cert-card-grid">
+
+
+                <!-- CERTIFICATE 1 -->
+                {% for cert in certificates %}
+                     <article class="cert-page-card">
+
+                    <!-- Certificate Image -->
+                    <div class="cert-page-image">
+                        <img src="{{cert.image}}" alt="{{cert.image_alt}}">
+
+                        <span class="cert-page-type">
+                            <i class="fa-solid fa-award"></i>
+                            Certificate
+                        </span>
+                    </div>
+
+                    <!-- Certificate Information -->
+                    <div class="cert-page-info">
+
+                        <div class="cert-page-meta">
+                            <span>
+                                <i class="fa-solid fa-school"></i>
+                                {{cert.provider|title}}
+                            </span>
+
+                            <small>
+                                <i class="fa-regular fa-calendar"></i>
+                                {{cert.year}}
+                            </small>
+                        </div>
+
+                        <h3>{{cert.title|title}}</h3>
+
+                        <p class="cert-page-description">
+                            {{cert.description}}
+                        </p>
+
+                        <div class="cert-page-tags">
+                            
+                            {% for topic in cert.topics %}
+                                <span>{{topic}}</span>
+                            {% endfor %}
+                        </div>
+
+                        <a href="cert.certificate_url" class="cert-page-button">
+                            View Certificate
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+                {% endfor %}
+               
+
+                <!-- CERTIFICATE 2 -->
+               
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VERIFICATION NOTICE -->
+    <section class="cert-verification-section">
+
+        <div class="cert-container">
+
+            <div class="verification-card">
+
+                <div class="verification-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="verification-content">
+
+                    <div class="verification-label">
+                        <span>VERIFICATION STANDARDS</span>
+                        <i class="fa-solid fa-circle"></i>
+                        <small>Notice for Recruiters & Mentors</small>
+                    </div>
+
+                    <h3>
+                        All credentials represent authentic coursework
+                        completion and verifiable hands-on event participation.
+                    </h3>
+
+                    <p>
+                        Original physical certificates, official verification
+                        URLs, and performance transcripts are accessible upon
+                        formal background verification or interview inquiry.
+                    </p>
+
+                </div>
+
+                <a href="mailto:aadinagpal46@gmail.com" class="verification-button">
+                    <i class="fa-regular fa-envelope"></i>
+                    Request Official Copies
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEXT STEPS CTA -->
+    <section class="cert-cta-section">
+
+        <div class="cert-container">
+
+            <span class="cta-eyebrow">NEXT STEPS</span>
+
+            <h2>Interested in Collaborating?</h2>
+
+            <p>
+                Whether you have an upcoming project, an internship
+                opportunity, or want to discuss technical problem-solving,
+                let's start a conversation.
+            </p>
+
+            <div class="cert-cta-actions">
+
+                <a href="{% url "contact" %}" class="cert-cta-primary">
+                    Get in Touch
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="{% url "skills" %}" class="cert-cta-secondary">
+                    <i class="fa-solid fa-bolt"></i>
+                    Explore Technical Skills
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,386 @@
+{% extends "base.html" %}
+{% block title %} Contact | Aadi {% endblock %}
+{% block content %}
+<main class="contact-page">
+
+    <!-- CONTACT HERO -->
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="contact-hero-grid"></div>
+
+        <div class="contact-container contact-hero-inner">
+
+            <!-- LEFT CONTENT -->
+            <div class="contact-hero-content">
+
+                <span class="contact-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    LET'S START A CONVERSATION
+                </span>
+
+                <h1>
+                    Have an idea?
+                    <br>
+                    <span class="hero-gradient-text">Let's make it</span>
+                    <br>
+                    happen<span class="hero-period">.</span>
+                </h1>
+
+                <p>
+                    Have a project idea, collaboration opportunity or just
+                    want to talk about technology? My inbox is always open.
+                    Let's build something meaningful.
+                </p>
+
+                <div class="hero-bottom-info">
+                    <span class="hero-availability">
+                        <span class="availability-dot"></span>
+                        Currently available for opportunities
+                    </span>
+
+                    <span class="hero-scroll">
+                        SCROLL TO CONNECT
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- RIGHT ANIMATION -->
+            <div class="contact-hero-visual">
+
+                <div class="orbit orbit-one">
+                    <span class="orbit-dot dot-one"></span>
+                </div>
+
+                <div class="orbit orbit-two">
+                    <span class="orbit-dot dot-two"></span>
+                </div>
+
+                <div class="orbit orbit-three">
+                    <span class="orbit-dot dot-three"></span>
+                </div>
+
+                <!-- MAIN ENVELOPE -->
+                <div class="hero-mail-card">
+                    <div class="mail-card-top">
+                        <span class="mail-status-dot"></span>
+                        <span>NEW MESSAGE</span>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+
+                    <div class="mail-icon-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <h3>Let's talk!</h3>
+                    <p>Good ideas begin with a conversation.</p>
+
+                    <div class="mail-card-footer">
+                        <span>Available to connect</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+
+                <!-- FLOATING ELEMENTS -->
+                <div class="floating-message message-one">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Let's collaborate</span>
+                </div>
+
+                <div class="floating-message message-two">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Send an idea</span>
+                </div>
+
+                <div class="floating-spark spark-one">✦</div>
+                <div class="floating-spark spark-two">✧</div>
+                <div class="floating-spark spark-three">✦</div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT DETAILS + FORM -->
+    <section class="contact-main">
+        <div class="contact-container contact-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="contact-information">
+                <h2>I'd Love to Hear From You.</h2>
+                <p class="contact-description">
+                    Whether you're looking to discuss full-stack opportunities,
+                    share feedback on my projects, or collaborate on open-source
+                    ideas, my inbox is always open. I'll get back to you promptly!
+                </p>
+
+                <div class="availability-banner">
+                    <span class="availability-dot"></span>
+                    Available for internships & freelance collaborations
+                </div>
+
+                <div class="contact-detail-list">
+                    <div class="contact-detail">
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="detail-content">
+                            <small>Location</small>
+                            <strong>Yamunanagar, Haryana, India</strong>
+                        </div>
+                    </div>
+                    {% for link in social_links %}
+                    <div class="contact-detail">
+                        <div class="detail-icon">
+                            <i class="{{link.icon}}"></i>
+                        </div>
+                        <div class="detail-content">
+                            <small>{{link.name}} Profile</small>
+                            <a href="{{link.url}}">
+                                {{link.url}}
+                            </a>
+                        </div>
+                        <a href="{{link.url}}" class="detail-action" aria-label="Send email">
+                            <i class="fa-regular fa-copy"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+
+
+
+
+                </div>
+
+                <div class="response-card">
+                    <div class="response-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Guaranteed Response Speed</h4>
+                        <p>
+                            Response time: Typically within 24 hours.
+                            Urgent queries receive precedence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="contact-form-card">
+                <div class="form-heading">
+                    <div>
+                        <h2>Send a Direct Message</h2>
+                        <p>
+                            Fill out the quick briefing form below and
+                            I'll get back to your registered address.
+                        </p>
+                    </div>
+                    <span class="inbox-badge">Direct Inbox</span>
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="form-alert {{ message.tags }}">
+                    {% if message.tags == "success" %}
+                    <i class="fa-solid fa-circle-check"></i>
+                    {% else %}
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    {% endif %}
+
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <div id="formAlert" class="form-alert"></div>
+                <form class="contact-form" method="POST" action="{% url 'contact' %}">
+
+                    {% csrf_token %}
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="full_name">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input type="text" id="full_name" name="full_name" placeholder="e.g. John Doe"
+                                value="{{ form.full_name.value|default:'' }}" required>
+
+                            {% if form.full_name.errors %}
+                            <small class="error">
+                                {{ form.full_name.errors.0 }}
+                            </small>
+                            {% endif %}
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address <span>*</span>
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="e.g. john@example.com"
+                                value="{{ form.email.value|default:'' }}" required>
+
+                            {% if form.email.errors %}
+                            <small class="error">
+                                {{ form.email.errors.0 }}
+                            </small>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject <span>*</span>
+                        </label>
+
+                        <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Internship"
+                            value="{{ form.subject.value|default:'' }}" required>
+
+                        {% if form.subject.errors %}
+                        <small class="error">
+                            {{ form.subject.errors.0 }}
+                        </small>
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message <span>*</span>
+                        </label>
+
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5"
+                            required>{{ form.message.value|default:'' }}</textarea>
+
+                        {% if form.message.errors %}
+                        <small class="error">
+                            {{ form.message.errors.0 }}
+                        </small>
+                        {% endif %}
+
+                    </div>
+
+                    <button type="submit" class="contact-submit" id="submitBtn">
+                        <span class="btn-text">
+                            Send Message
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </span>
+
+                        <span class="btn-loader"></span>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COLLEGE / LOCATION SECTION -->
+    <section class="contact-location-section">
+        <div class="contact-container">
+            <div class="location-card">
+
+                <div class="location-content">
+                    <span class="location-label">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        ACADEMIC BASE · DAMLA
+                    </span>
+
+                    <h2>Seth Jai Parkash Polytechnic</h2>
+
+                    <p>
+                        Currently pursuing Computer Engineering in Damla,
+                        Yamunanagar district. A vibrant center for hands-on
+                        technical labs, system programming, and collaborative
+                        engineering projects.
+                    </p>
+
+                    <div class="location-meta">
+                        <span>
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            Yamunanagar, Haryana
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            IST (UTC+5:30)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Seth%20Jai%20Parkash%20Polytechnic%20Damla&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Seth Jai Parkash Polytechnic location">
+                    </iframe>
+
+                    <div class="map-location-label">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Yamunanagar, Haryana</strong>
+                            <small>Seth Jai Parkash Polytechnic</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+{% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".contact-form");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (!form || !submitBtn) return;
+
+    form.addEventListener("submit", function (event) {
+
+        // Don't activate loader if HTML validation fails
+        if (!form.checkValidity()) {
+            return;
+        }
+
+        // Activate loader
+        submitBtn.classList.add("loading");
+
+        // Disable button to prevent duplicate submissions
+        submitBtn.disabled = true;
+
+    });
+
+    // Automatically hide Django success messages
+    const alerts = document.querySelectorAll(".form-alert.success");
+
+    alerts.forEach(function (alert) {
+
+        setTimeout(function () {
+
+            alert.style.transition = "all 0.4s ease";
+            alert.style.opacity = "0";
+            alert.style.transform = "translateY(-10px)";
+
+            setTimeout(function () {
+                alert.remove();
+            }, 400);
+
+        }, 5000);
+
+    });
+
+});
+</script>

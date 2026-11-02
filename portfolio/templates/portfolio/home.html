@@ -1,0 +1,420 @@
+
+{% extends "base.html" %}
+{% block title %} Home | Aadi {% endblock  %}
+{% block content %}
+    <main>
+
+        <!-- HOME SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        {{profile.title|upper}} · {{profile.profession|upper}}
+                    </div>
+
+                    <h1>
+                        Hi, I'm {{profile.name|slice:":4"}}. I build
+                        <br>
+                        <span>digital experiences</span>.
+                    </h1>
+
+                    <p class="hero-description">
+                        {{profile.introduction}}
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="{% url "projects" %}" class="button button-primary">
+                            <i class="fa-solid fa-up-right-from-square"></i> Explore My Work 
+                        </a>
+
+                        <a href="{% url "contact" %}" class="button button-muted">
+                            <i class="fa-solid fa-fingerprint"></i> Get In Touch
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <span class="mono">01 / UI & WEB</span>
+                            <strong>Web Development</strong>
+                            <small>Modern, responsive interfaces</small>
+                        </div>
+
+                        <div>
+                            <span class="mono">02 / BACKEND</span>
+                            <strong>DJANGO Python</strong>
+                            <small>Full-stack scalable architectures</small>
+                        </div>
+
+                        <div>
+                            <span class="mono">03 / FOUNDATION</span>
+                            <strong>Data Structures</strong>
+                            <small>Algorithms & robust logic</small>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- DEVELOPER TERMINAL -->
+                <div class="hero-visual">
+
+                    <div class="float-label label-top">
+                        ✧ Currently Exploring
+                    </div>
+
+                    <div class="terminal-window">
+
+                        <div class="terminal-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <span>aadi@portfolio ~ zsh</span>
+                        </div>
+
+                        <div class="terminal-center">
+                            <div class="terminal-symbol"><i class="fa-solid fa-terminal"></i></div>
+                            <span class="check-mark">✓</span>
+                        </div>
+
+<pre><code>const engineer = { 
+    name: '{{profile.name}}',
+    status: <b>'Ready for Impact'</b>
+};</code></pre>
+
+                        <div class="terminal-bottom">
+                            <span><i></i> {{profile.availability|title}}</span>
+                            <span>Branch: main*</span>
+                        </div>
+
+                    </div>
+
+                    <div class="float-label label-bottom">
+                        <i class="fa-solid fa-code"></i> Dev in Progress
+                        <br>
+                        <small>Continuous Growth</small>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about section" id="about">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">ABOUT MY WORK</span>
+                        <h2>
+                            Technology, Creativity &
+                            <br>
+                            Problem Solving
+                        </h2>
+                    </div>
+
+                    <a href="{% url "about" %}" class="text-link">
+                        More About Me →
+                    </a>
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-copy">
+
+                        <p>
+                            As a Computer Engineering student, my goal isn't just
+                            to write lines of syntax—it's to architect resilient
+                            software that makes everyday tasks effortlessly smoother.
+                        </p>
+
+                        <p class="muted-copy">
+                            From tackling database indexing to refining UI
+                            micro-interactions, I treat every project as a deep dive
+                            into clean design and real-world system resilience.
+                            I believe true engineering elegance happens when
+                            complex logic feels completely invisible to the user.
+                        </p>
+
+                        <div class="education-card">
+                            <span class="education-icon"><i class="fa-solid fa-book-open"></i></span>
+
+                            <div>
+                                <strong>Academic Foundation</strong>
+                                <small>
+                                    Computer Engineering · Active builder in
+                                    modern web ecosystems
+                                </small>
+                            </div>
+                        </div>
+                            <br>
+                    </div>
+
+                    <div class="principles">
+
+                        <article class="principle-card">
+                            <span class="principle-icon"><i class="fa-solid fa-hand-sparkles"></i></span>
+                            <h3>Clean Code</h3>
+                            <p>
+                                Disciplined structure, self-documenting logic,
+                                and maintainability baked directly into the repository.
+                            </p>
+                            <span class="mono">01 / DISCIPLINE</span>
+                        </article>
+
+                        <article class="principle-card">
+                            <span class="principle-icon"><i class="fa-solid fa-folder-tree"></i></span>
+                            <h3>Pragmatic Architecture</h3>
+                            <p>
+                                Selecting tools for durability and simplicity
+                                rather than chasing superficial framework hype.
+                            </p>
+                            <span class="mono">02 / SYSTEMS</span>
+                        </article>
+
+                        <article class="principle-card">
+                            <span class="principle-icon"><i class="fa-solid fa-brain"></i></span>
+                            <h3>User-First Thinking</h3>
+                            <p>
+                                Responsive design, swift feedback states,
+                                and frictionless journeys designed for humans.
+                            </p>
+                            <span class="mono">03 / EMPATHY</span>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <!-- SKILLS SECTION -->
+        <section class="skills section" id="skills">
+            <div class="container">
+
+                <div class="skills-panel">
+
+                    <div class="skills-copy">
+                        <span class="section-kicker">TECHNICAL TOOLKIT</span>
+
+                        <h2>
+                            Languages &
+                            <br>
+                            Frameworks
+                        </h2>
+
+                        <p>
+                            A growing repertoire of core software development
+                            tools and backend ecosystems I leverage to ship
+                            reliable digital products.
+                        </p>
+
+                        <a href="{% url "skills" %}" class="text-link">
+                            View All Skills →
+                        </a>
+                    </div>
+
+                    <div class="skill-pills">
+                        {% for skill_grp in skills %}
+                            {% for skill in skill_grp.skills %}
+                                {% if skill.is_featured %}<span><i  style="background:{{skill.color}}; width: 8px; height: 8px; border-radius: 50%;"></i> {{skill.name}}</span>{% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                       
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div>
+                        <span class="section-kicker">
+                            HAVE AN IDEA OR OPPORTUNITY?
+                        </span>
+
+                        <h2>
+                            Let's build something
+                            <br>
+                            exceptional together.
+                        </h2>
+
+                        <p>
+                            I'm currently open for engineering internships,
+                            technical collaborations, and ambitious student initiatives.
+                        </p>
+                    </div>
+
+                    <a href="mailto:aadinagpal46@gmail.com" class="button button-primary">
+                        <i class="fa-solid fa-play"></i> Start a Conversation
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section class="section achievements-section" id="achievements">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">MILESTONES & RECOGNITION</span>
+                        <h2>Achievements & Recognition</h2>
+                        <p class="section-subtitle">
+                            A collection of milestones, competitions and
+                            recognitions that represent my journey.
+                        </p>
+                    </div>
+
+                    <div class="achievement-total">
+                        <strong>{{achievements|length}}</strong>
+                        <span>Major Achievement{{achievements|pluralize}}</span>
+                    </div>
+                </div>
+
+                <div class="achievement-grid">
+                    <!-- Achievement 1 -->
+                        {% for ach in achievements %}
+
+                             {% if ach.is_featured %}
+                                <article class="achievement-card">
+
+                        <div class="achievement-image">
+                            <img src="assets/images/achievements/project-exhibition.jpg"
+                                alt="Multi Branch IMS project exhibition award" loading="lazy">
+
+                            <span class="achievement-position">
+                                {{ach.position}}
+                            </span>
+                        </div>
+
+                        <div class="achievement-content">
+
+                            <div class="achievement-meta">
+                                <span>{{ach.title}}</span>
+                                <span>{{ach.date|default:"-"}}</span>
+                            </div>
+
+                            <h3>{{ach.title}}</h3>
+
+                            <p>
+                               {{ach.description}}
+                            </p>
+
+                          
+
+                        </div>
+
+                    </article>
+                             {% endif %}
+                        {% endfor %}
+                   
+
+
+           
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="section certificates-section " id="certificates">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">CONTINUOUS LEARNING</span>
+                        <h2>Certificates & Credentials</h2>
+                        <p class="section-subtitle">
+                            Courses, workshops and learning experiences
+                            that contribute to my technical growth.
+                        </p>
+                    </div>
+
+                    <div class="certificate-total">
+                        <strong>{{certificates|length}}</strong>
+                        <span>Certification Highlights</span>
+                    </div>
+                </div>
+
+
+                <div class="certificate-grid">
+
+                    <!-- Certificate 1 -->
+
+                    {% for cert in certificates %}
+                           {% if cert.is_featured %}
+                                 <article class="certificate-card">
+
+                        <a href="{{cert.image}}" target="_blank"
+                            rel="noopener noreferrer" class="certificate-image">
+                            <img src="{{cert.image}}"
+                                alt="{{cert.image_alt}}" loading="lazy">
+
+                            <span class="certificate-zoom">
+                                ↗ View Certificate
+                            </span>
+                        </a>
+
+                        <div class="certificate-content">
+
+                            <div class="certificate-category">
+                                
+                                <span class="certificate-status">{{cert.type}}</span>
+                            </div>
+
+                            <h3>{{cert.title}}</h3>
+
+                            <p>
+                                {{cert.description}}
+                            </p>
+
+                            <div class="certificate-skills">
+                                {% for topic in cert.topics %}
+                                    <span>{{topic}}</span>
+                                {% endfor %}
+                                
+                            </div>
+
+                            <div class="certificate-issuer">
+                                <div>
+                                    <small>ISSUED BY</small>
+                                    <strong>{{cert.provider}}</strong>
+                                </div>
+
+                                <span class="issuer-icon">{{cert.provider|slice:"0:1"}}</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+                           {% endif %}
+                    {% endfor %}
+                    
+
+
+                    
+
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+{% endblock  %}
