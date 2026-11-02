@@ -36,7 +36,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "192.168.158.227",
     "127.0.0.1",
-    "aadinagpal22.pythonanywhere.com"
+    "aadi-nagpal-portfolio.onrender.com"
 ]
 
 
