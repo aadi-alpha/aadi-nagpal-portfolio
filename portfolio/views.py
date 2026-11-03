@@ -94,9 +94,9 @@ def contact(request):
     )
 
 
-def page_not_found(request, exception):
+def page_not_found(request,*args, **kwargs):
     return render(
         request,
         "portfolio/404.html",
-        status=404
+        
     )
