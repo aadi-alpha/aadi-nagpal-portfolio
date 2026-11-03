@@ -14,9 +14,9 @@ def home(req):
     context = {
         "profile": profile,
         "social_links":social_links,
-        "skills": data.SKILL_CATEGORIES,
-        "achievements":data.ACHIEVEMENTS,
-        "certificates":data.CERTIFICATES
+        "skills": Skills.objects.filter(is_featured=True),
+        "achievements":Achievement.objects.filter(is_featured = True),
+        "certificates": Certificate.objects.filter(is_featured = True)
         
     }
     return render(req,'portfolio/home.html',context)

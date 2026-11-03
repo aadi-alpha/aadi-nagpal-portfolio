@@ -3,7 +3,7 @@
 {% block title %} Home | Aadi {% endblock  %}
 {% block content %}
     <main>
-
+        
         <!-- HOME SECTION -->
         <section class="hero" id="home">
             <div class="container hero-grid">
@@ -218,11 +218,11 @@
                     </div>
 
                     <div class="skill-pills">
-                        {% for skill_grp in skills %}
-                            {% for skill in skill_grp.skills %}
+                        
+                            {% for skill in skills %}
                                 {% if skill.is_featured %}<span><i  style="background:{{skill.color}}; width: 8px; height: 8px; border-radius: 50%;"></i> {{skill.name}}</span>{% endif %}
                             {% endfor %}
-                        {% endfor %}
+                        
                        
                     </div>
 
