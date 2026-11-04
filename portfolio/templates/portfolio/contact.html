@@ -183,6 +183,9 @@
                 {% for message in messages %}
                 <div class="form-alert {{ message.tags }}">
                     {% if message.tags == "success" %}
+                    <script>
+                        alert("Form Submitted Successfully!")
+                    </script>
                     <i class="fa-solid fa-circle-check"></i>
                     {% else %}
                     <i class="fa-solid fa-circle-exclamation"></i>
@@ -269,8 +272,8 @@
 
                     </div>
 
-                    <button type="submit" class="contact-submit" id="submitBtn">
-                        <span class="btn-text">
+                    <button type="submit" class="contact-submit" id="submitBtn" onclick="buttonValueChange()">
+                        <span class="btn-text btn-text-submit">
                             Send Message
                             <i class="fa-regular fa-paper-plane"></i>
                         </span>
@@ -345,25 +348,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.querySelector(".contact-form");
     const submitBtn = document.getElementById("submitBtn");
+    const buttonText = document.querySelector(".btn-text-submit");
 
-    if (!form || !submitBtn) return;
+    if (!form || !submitBtn || !buttonText) return;
 
     form.addEventListener("submit", function (event) {
 
-        // Don't activate loader if HTML validation fails
+        // Check form validation
         if (!form.checkValidity()) {
             return;
         }
 
-        // Activate loader
+        // Change button text
+        buttonText.innerHTML = `
+            Submitting...
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        `;
+
+        // Add loading class
         submitBtn.classList.add("loading");
 
-        // Disable button to prevent duplicate submissions
+        // Prevent multiple submissions
         submitBtn.disabled = true;
 
     });
 
-    // Automatically hide Django success messages
+
+    // Automatically hide success messages
     const alerts = document.querySelectorAll(".form-alert.success");
 
     alerts.forEach(function (alert) {
@@ -383,4 +394,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
 </script>

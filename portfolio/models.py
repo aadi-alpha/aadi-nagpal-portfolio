@@ -79,7 +79,7 @@ class Skills(models.Model):
 
 # ============= ABOUT MODELS ==============
 class About(models.Model):
-    profile_image = models.URLField(max_length=200, blank=True)
+    profile_image = models.URLField(max_length=500, blank=True)
     profile_tag = models.CharField(max_length=150)
     highlight = models.TextField()
 

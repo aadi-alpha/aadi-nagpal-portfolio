@@ -75,13 +75,15 @@
             <div class="profile-column">
 
                 <div class="profile-image-wrapper">
-                    <img src="{% static 'images/aadi_nagpal.jpg'%}" alt="Aadi Nagpal working at his desk"
+                    
+                    <img src="{{about.profile_image}}" alt="Aadi Nagpal "
                         class="about-profile-image">
 
                     <span class="profile-tag">
                         ✦ {{about.profile_tag}}
                     </span>
                 </div>
+                <p>Image URL: {{ about.profile_image }}</p>
 
                 <div class="snapshot-card">
                     <span class="small-heading">SNAPSHOT</span>
