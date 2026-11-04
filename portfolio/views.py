@@ -53,7 +53,9 @@ def project(req):
 
 def achievement(req):
     context = {
-        "achievements": Achievement.objects.all()
+        "achievements": Achievement.objects.all(),
+        "first_count":Achievement.objects.filter(position=1).count()
+
     }
     return render(req, 'portfolio/achievements.html',context)
 

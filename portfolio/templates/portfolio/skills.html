@@ -109,12 +109,23 @@
                                 {{skill_grp.description}}
                             </p>
 
-                            <div class="skill-tags">
-                                {% for skill in skill_grp.skills_set.all %}
-                                <span>{{skill.name}}</span>
-                              
-                                {% endfor %}
-                            </div>
+                           <div class="skill-tags">
+    {% for skill in skill_grp.skills_set.all %}
+    <div class="skill-tag level-{{ skill.level }}"
+         style="--skill-color: {{ skill.color }}">
+
+        <span class="skill-tag-name">
+            {{ skill.name }}
+        </span>
+
+        <span class="skill-tag-level">
+            <i class="{{ skill.icon }}"></i>
+            {{ skill.get_level_display }}
+        </span>
+
+    </div>
+    {% endfor %}
+</div>
 
                             <div class="skill-note">
                                 <span><i class="fa-solid fa-circle-info"></i></span>

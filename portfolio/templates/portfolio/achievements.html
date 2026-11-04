@@ -72,7 +72,7 @@
                 </div>
 
                 <div>
-                    <h3>2 First</h3>
+                    <h3>{{first_count}} First</h3>
                     <p>Positions Secured</p>
                 </div>
             </article>
@@ -139,59 +139,83 @@
             </div>
 
 
-            <div class="achievement-grid">
+           <div class="achievement-grid">
 
+    {% for achievement in achievements %}
 
-                <!-- CARD 1 -->
-                {% for achievement in achievements %}
-                <article class="achievement-card">
+    <article class="achievement-card-ach">
 
-                    <div class="certificate-preview">
-                        <img src="{{achievement.image}}" alt="{{achievement.image_alt}}">
+        <!-- LEFT: Certificate Image -->
 
-                        <span class="certificate-overlay">
-                            <i class="fa-solid fa-image"></i>
-                            Certificate Preview
-                        </span>
-                    </div>
+   
 
-                    <div class="achievement-card-content">
+        <!-- RIGHT: Achievement Details -->
 
-                        <div class="achievement-card-top">
-                            <span class="achievement-date">{{achievement.date}} · {{achievement.category}}</span>
+        <div class="achievement-card-content">
 
-                            <span class="position-badge first">{{achievement.position}}</span>
+            <div class="achievement-card-top">
 
-                        </div>
+                
 
-                        <h3>{{achievement.title}}</h3>
-
-                        <span class="achievement-category">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            {{achievement.project_tag}}
-                        </span>
-
-                        <p>
-                            {{achievement.description}}
-                        </p>
-
-                        <div class="achievement-tags">
-                            {% for highlight in achievement.highlights %}{% endfor %}
-                        </div>
-
-                        <a href="{{achievement.image}}" target="_blank" class="certificate-button">
-                            View Image
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
-                    </div>
-
-                </article>
-                {% endfor %}
-
+                <span class="position-badge first">
+                    {{ achievement.position }}
+                </span>
 
             </div>
 
+            <h3>{{ achievement.title }}</h3>
+
+            <span class="achievement-category">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                {{ achievement.project_tag }}
+
+            </span>
+
+            <p>
+                {{ achievement.description }}
+            </p>
+
+            <div class="achievement-tags">
+
+                {% for highlight in achievement.highlights %}
+
+                    <span>{{ highlight }}</span>
+
+                {% endfor %}
+
+            </div>
+
+            <a
+                href="{{ achievement.image }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificate-button"
+            >
+
+                View Full Image
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+        </div>
+             <div class="certificate-preview">
+
+            <img
+                src="{{ achievement.image }}"
+                alt="{{ achievement.image_alt }}"
+            >
+
+        </div>
+
+
+    </article>
+
+    {% endfor %}
+
+</div>
         </div>
 
     </section>
@@ -240,13 +264,13 @@
             <div class="showcase-gallery">
 
                 <figure class="showcase-image">
-                    <img src="https://drive.google.com/thumbnail?id=1HVdIQyewkfGTgfHUsolDFtpCWrGdJK8i" alt="State Youth Festival 2025">
+                    <img src="https://drive.google.com/thumbnail?id=1HVdIQyewkfGTgfHUsolDFtpCWrGdJK8i&sz=w2000" alt="State Youth Festival 2025">
 
                     <figcaption>State Youth Festival-2025</figcaption>
                 </figure>
 
                 <figure class="showcase-image">
-                    <img src="https://drive.google.com/thumbnail?id=1GSqFoGaPa-7PJvutxVHhLuc-aQEzGaz6" alt="Project Exhibition">
+                    <img src="https://drive.google.com/thumbnail?id=1GSqFoGaPa-7PJvutxVHhLuc-aQEzGaz6&sz=w2000" alt="Project Exhibition">
 
                     <figcaption>Project Exhibition-2026</figcaption>
                 </figure>

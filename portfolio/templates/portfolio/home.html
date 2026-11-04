@@ -290,8 +290,8 @@
                                 <article class="achievement-card">
 
                         <div class="achievement-image">
-                            <img src="assets/images/achievements/project-exhibition.jpg"
-                                alt="Multi Branch IMS project exhibition award" loading="lazy">
+                            <img src="{{ach.image}}"
+                                alt="ach.image_alt" loading="lazy">
 
                             <span class="achievement-position">
                                 {{ach.position}}
@@ -357,7 +357,7 @@
                            {% if cert.is_featured %}
                                  <article class="certificate-card">
 
-                        <a href="{{cert.image}}" target="_blank"
+                        <a href="https://drive.google.com/thumbnail?id={{cert.image}}&sz=w2000" target="_blank"
                             rel="noopener noreferrer" class="certificate-image">
                             <img src="{{cert.image}}"
                                 alt="{{cert.image_alt}}" loading="lazy">

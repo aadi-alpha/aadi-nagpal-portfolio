@@ -3301,22 +3301,60 @@ h2 {
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    min-height: 58px;
+    gap: 10px;
     align-content: flex-start;
 }
 
-.skill-tags span {
+.skill-tag {
     display: inline-flex;
-    align-items: center;
-    background: #eae3ff;
-    color: #4c36a9;
-    padding: 7px 11px;
-    border-radius: 30px;
-    font-size: 10px;
-    font-weight: 600;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 9px 12px;
+    border-radius: 10px;
+
+    background: color-mix(
+        in srgb,
+        var(--skill-color) 8%,
+        white
+    );
+
+    border: 1px solid color-mix(
+        in srgb,
+        var(--skill-color) 25%,
+        transparent
+    );
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
+.skill-tag:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 4px 12px
+        color-mix(in srgb, var(--skill-color) 15%, transparent);
+}
+
+.skill-tag-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #27233b;
+}
+
+.skill-tag-level {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--skill-color);
+}
+
+.skill-tag-level i {
+    font-size: 10px;
+}
 .skill-note {
     display: flex;
     align-items: flex-start;
@@ -6487,6 +6525,7 @@ h2 {
 /* =========================================================
    4. ACHIEVEMENT CARDS WITH CERTIFICATE IMAGES
 ========================================================= */
+/* Achievement Grid */
 
 .achievement-grid {
     display: flex;
@@ -6494,24 +6533,33 @@ h2 {
     gap: 20px;
 }
 
-.achievement-card {
-    min-width: 0;
+/* Achievement Card */
+
+.achievement-card-ach {
+    width: 100%;
+    max-width: 500px;
     overflow: hidden;
 
     display: grid;
-    grid-template-columns: 155px minmax(0, 1fr);
+    grid-template-columns: minmax(200px, 300px) 1fr;
 
     border: 1px solid var(--ach-border);
     border-radius: 12px;
     background: #faf8ff;
+    transition: 0.3s ease;
 }
 
-/* Certificate image */
+.achievement-card-ach:hover {
+    border-color: var(--ach-primary);
+    transform: translateY(-3px);
+}
+
+/* Certificate Image */
 
 .certificate-preview {
-    position: relative;
-    min-height: 100%;
-    padding: 12px;
+    min-width: 0;
+    min-height: 230px;
+    padding: 14px;
 
     display: flex;
     align-items: center;
@@ -6522,43 +6570,26 @@ h2 {
 }
 
 .certificate-preview img {
+    display: block;
+
     width: 100%;
-    height: 175px;
+    height: 100%;
+    
+
     object-fit: contain;
 
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 6px;
+
     background: white;
     border: 1px solid #e2def0;
 }
 
-.certificate-overlay {
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-
-    padding: 7px 5px;
-    border-radius: 5px;
-
-    background: rgba(35, 30, 63, 0.82);
-    color: white;
-
-    font-size: 8px;
-    font-weight: 600;
-}
-
-
-/* Card content */
+/* Card Content */
 
 .achievement-card-content {
     min-width: 0;
-    padding: 16px;
+    padding: 18px 20px;
 
     display: flex;
     flex-direction: column;
@@ -6567,27 +6598,28 @@ h2 {
 
 .achievement-card-top {
     width: 100%;
+
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 8px;
+
     margin-bottom: 12px;
 }
 
 .achievement-date {
     color: var(--ach-primary);
     font-family: var(--ach-mono);
-    font-size: clamp(8px,1.5vw,10px);
+    font-size: clamp(8px, 1.5vw, 10px);
     line-height: 1.6;
 }
 
 .position-badge {
     flex-shrink: 0;
-
     padding: 5px 9px;
     border-radius: 20px;
 
-    font-size: clamp(7px,1.5vw,9px);
+    font-size: clamp(7px, 1.5vw, 9px);
     font-weight: 650;
 }
 
@@ -6609,7 +6641,7 @@ h2 {
 .achievement-card-content h3 {
     margin: 0 0 8px;
     color: var(--ach-dark);
-    font-size: clamp(13px,1.5vw,16px);
+    font-size: clamp(14px, 1.5vw, 17px);
     font-weight: 700;
     line-height: 1.5;
 }
@@ -6626,7 +6658,7 @@ h2 {
     background: #f0edff;
     color: #3e3b55;
 
-    font-size: clamp(8px,1.5vw,10px);
+    font-size: clamp(8px, 1.5vw, 10px);
     font-weight: 550;
 }
 
@@ -6637,7 +6669,7 @@ h2 {
 .achievement-card-content > p {
     margin: 0 0 12px;
     color: #68667c;
-    font-size: clamp(9px,1.5vw,12px);
+    font-size: clamp(10px, 1.2vw, 12px);
     line-height: 1.8;
 }
 
@@ -6652,19 +6684,18 @@ h2 {
 .achievement-tags span {
     color: #5b596d;
     font-family: var(--ach-mono);
-    font-size: 7px;
+    font-size: 8px;
 }
 
 .achievement-tags span:first-child {
     color: var(--ach-primary);
 }
 
-
-/* Certificate button */
+/* Certificate Button */
 
 .certificate-button {
     width: 100%;
-    min-height: 32px;
+    min-height: 34px;
 
     display: flex;
     align-items: center;
@@ -6677,13 +6708,41 @@ h2 {
     background: #ebe7ff;
     color: var(--ach-primary);
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.25s ease;
 }
 
 .certificate-button:hover {
     background: var(--ach-primary);
     color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+    .achievement-card-ach {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-preview {
+        min-height: 0;
+        height: 230px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--ach-border);
+    }
+
+    .certificate-preview img {
+        max-height: 210px;
+    }
+
+    .achievement-card-content {
+        padding: 16px;
+    }
 }
 
 
@@ -6917,9 +6976,7 @@ h2 {
         grid-template-columns: 1fr;
     }
 
-    .achievement-card {
-        grid-template-columns: 180px minmax(0, 1fr);
-    }
+
 
     .showcase-grid {
         gap: 22px;
@@ -7032,17 +7089,9 @@ h2 {
         gap: 15px;
     }
 
-    .achievement-card {
-        grid-template-columns: 115px minmax(0, 1fr);
-    }
 
-    .certificate-preview {
-        padding: 7px;
-    }
 
-    .certificate-preview img {
-        height: 140px;
-    }
+
 
     .certificate-overlay {
         left: 6px;
@@ -7168,9 +7217,7 @@ h2 {
         grid-template-columns: 1fr;
     }
 
-    .achievement-card {
-        grid-template-columns: 95px minmax(0, 1fr);
-    }
+  
 
     .certificate-preview img {
         height: 120px;

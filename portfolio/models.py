@@ -264,7 +264,7 @@ class Certificate(models.Model):
     topics = models.JSONField(default=list, blank=True)
     image = models.CharField(max_length=255, blank=True)
     image_alt = models.CharField(max_length=200, blank=True)
-    certificate_url = models.URLField(max_length=300, blank=True)
+    certificate_url = models.CharField(max_length=300, blank=True)
     certificate_label = models.CharField(
         max_length=100,
         default="View Certificate"
