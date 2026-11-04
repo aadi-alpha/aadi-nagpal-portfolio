@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-*#%1eo1kik247k@adg_w2dnj-@0zgvd1q)wg7!q(zenns9957m
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "192.168.158.227",
+    "192.168.134.227",
     "127.0.0.1",
     "aadi-nagpal-portfolio.onrender.com"
 ]
