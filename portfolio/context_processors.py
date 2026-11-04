@@ -1,4 +1,4 @@
-from .data import PROFILE_DATA
+
 from .models import Profile, SocialLinks
 
 def global_portfolio_data(request):
