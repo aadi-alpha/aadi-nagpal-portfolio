@@ -96,7 +96,7 @@
                     </p>
 
                     <div class="project-features">
-                        {% for feature in project.features %}
+                        {% for feature in project.features.all %}
                               <div class="feature-item">
                             <span>{{feature.number}} / {{feature.title}}</span>
                             <p>
@@ -143,12 +143,12 @@
 
                 <div class="project-image-wrapper">
                     <div class="project-image">
-                        <img src="images/takshila-demo.jpg"
-                             alt="Takshila Institute Management System preview">
+                        <img src="https://drive.google.com/thumbnail?id={{project.image}}&sz=w2000"
+                             alt="{{project.image_alt}}">
 
                         <span class="image-caption">
                             <i class="fa-regular fa-image"></i>
-                            Takshila IMS — Application Preview
+                            {{project.image_caption}}
                         </span>
                     </div>
                 </div>

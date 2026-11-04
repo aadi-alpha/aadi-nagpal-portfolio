@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from . import data
 # Create your views here.
-from .models import Profile, SocialLinks , About, AboutPoint, Education, Principles, Achievement, Certificate,Skills, SkillCategories
+from .models import Profile, SocialLinks , About, AboutPoint, Education, Principles, Achievement, Certificate,Skills, SkillCategories, Project, ProjectFeature
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactMessageForm
@@ -45,8 +45,11 @@ def skills(req):
     return render(req, 'portfolio/skills.html', context)
 
 def project(req):
+    
+    
     context = {
-        "projects":data.PROJECTS
+        "projects": Project.objects.all().prefetch_related("features")
+        
     }
     return render(req, 'portfolio/projects.html',context)
 
