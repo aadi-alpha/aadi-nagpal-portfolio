@@ -299,6 +299,15 @@
                         </div>
 
                         <div class="achievement-content">
+                                      <span class="achievement-category">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                {{ ach.project_tag }}
+
+            </span>
+            <br>
+            <br>
 
                             <div class="achievement-meta">
                                 <span>{{ach.title}}</span>
@@ -310,8 +319,8 @@
                             <p>
                                {{ach.description}}
                             </p>
-
-                          
+                              
+                   
 
                         </div>
 
@@ -359,7 +368,7 @@
 
                         <a href="https://drive.google.com/thumbnail?id={{cert.image}}&sz=w2000" target="_blank"
                             rel="noopener noreferrer" class="certificate-image">
-                            <img src="{{cert.image}}"
+                            <img src="https://drive.google.com/thumbnail?id={{cert.image}}&sz=w2000"
                                 alt="{{cert.image_alt}}" loading="lazy">
 
                             <span class="certificate-zoom">

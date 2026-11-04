@@ -779,7 +779,19 @@ h2 {
    COMMON CARD STYLING
 ========================================== */
 
-.achievement-card,
+.achievement-card{
+   width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+
+    border: 1px solid var(--ach-border);
+    border-radius: 12px;
+    background: #faf8ff;
+    transition: 0.3s ease;
+}
 .certificate-card {
     width: 100%;
     max-width: 400px;
@@ -802,14 +814,32 @@ h2 {
    COMMON IMAGE STYLING
 ========================================== */
 .achievement-image{
-    height: 100%;
-     display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #eeebf7;
-}
+    min-width: 0;
+    
+    padding: 14px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eeebff;
+    border-right: 1px solid var(--ach-border);
+}
+.achievement-image img{
+     display: block;
+
+    width: 100%;
+    height: 100%;
+    
+
+    object-fit: contain;
+
+    padding: 5px;
+    border-radius: 6px;
+
+    background: white;
+    border: 1px solid #e2def0;
+}
 .certificate-image {
     display: block;
     position: relative;
@@ -829,7 +859,7 @@ h2 {
 }
 
 .achievement-image img {
-    object-fit: contain;
+    
 }
 
 .certificate-image img {
@@ -6587,7 +6617,7 @@ h2 {
 
 /* Card Content */
 
-.achievement-card-content {
+.achievement-card-content-ach {
     min-width: 0;
     padding: 18px 20px;
 
@@ -6596,7 +6626,7 @@ h2 {
     align-items: flex-start;
 }
 
-.achievement-card-top {
+.achievement-card-top-ach {
     width: 100%;
 
     display: flex;
