@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . import data
+
 # Create your views here.
 from .models import Profile, SocialLinks , About, AboutPoint, Education, Principles, Achievement, Certificate,Skills, SkillCategories, Project, ProjectFeature
 from django.shortcuts import render, redirect
